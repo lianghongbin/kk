@@ -106,13 +106,9 @@
 		893106031B52720B00FFD239 /* beforeWeb.png in Resources */ = {isa = PBXBuildFile; fileRef = 893105AD1B52720B00FFD239 /* beforeWeb.png */; };
 		893106041B52720B00FFD239 /* nextWeb.png in Resources */ = {isa = PBXBuildFile; fileRef = 893105AE1B52720B00FFD239 /* nextWeb.png */; };
 		893106051B52720B00FFD239 /* refreshWeb.png in Resources */ = {isa = PBXBuildFile; fileRef = 893105AF1B52720B00FFD239 /* refreshWeb.png */; };
-		894DF3C71B61C2A500EE12AD /* GiftRespository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894DF3C61B61C2A500EE12AD /* GiftRespository.swift */; };
-		8954FC771B607D100027CDEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8954FC761B607D100027CDEB /* Constants.swift */; };
-		8965853B1B60BE6500604E90 /* GiftNagivationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8965853A1B60BE6500604E90 /* GiftNagivationController.swift */; };
-		8965853D1B60C26300604E90 /* Gift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8965853C1B60C26300604E90 /* Gift.swift */; };
-		8965853F1B60CA7700604E90 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8965853E1B60CA7700604E90 /* TableView.swift */; };
 		89B020CE1B5649FC001CF014 /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B020CD1B5649FC001CF014 /* GiftViewController.swift */; };
 		89B020D01B57480C001CF014 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B020CF1B57480C001CF014 /* RankViewController.swift */; };
+		EF190EB11B67067000922115 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF190EB01B67067000922115 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -229,13 +225,9 @@
 		893105AD1B52720B00FFD239 /* beforeWeb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beforeWeb.png; sourceTree = "<group>"; };
 		893105AE1B52720B00FFD239 /* nextWeb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nextWeb.png; sourceTree = "<group>"; };
 		893105AF1B52720B00FFD239 /* refreshWeb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refreshWeb.png; sourceTree = "<group>"; };
-		894DF3C61B61C2A500EE12AD /* GiftRespository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftRespository.swift; sourceTree = "<group>"; };
-		8954FC761B607D100027CDEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		8965853A1B60BE6500604E90 /* GiftNagivationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftNagivationController.swift; sourceTree = "<group>"; };
-		8965853C1B60C26300604E90 /* Gift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gift.swift; sourceTree = "<group>"; };
-		8965853E1B60CA7700604E90 /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		89B020CD1B5649FC001CF014 /* GiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
 		89B020CF1B57480C001CF014 /* RankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
+		EF190EB01B67067000922115 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,23 +270,19 @@
 			isa = PBXGroup;
 			children = (
 				8931054E1B52720A00FFD239 /* Resources */,
-				8954FC761B607D100027CDEB /* Constants.swift */,
 				8931052E1B524FB500FFD239 /* AppDelegate.swift */,
 				891E8C161B5A892600691DEF /* CircleView.swift */,
+				EF190EB01B67067000922115 /* Constants.swift */,
 				891E8C171B5A892600691DEF /* FirstVC.swift */,
 				893105301B524FB500FFD239 /* RootViewController.swift */,
 				89B020CD1B5649FC001CF014 /* GiftViewController.swift */,
-				8965853A1B60BE6500604E90 /* GiftNagivationController.swift */,
 				89B020CF1B57480C001CF014 /* RankViewController.swift */,
 				891E8C101B58D77D00691DEF /* GameViewController.swift */,
 				891E8C121B58D7B400691DEF /* MyViewController.swift */,
-				8965853C1B60C26300604E90 /* Gift.swift */,
 				893105321B524FB500FFD239 /* Main.storyboard */,
 				893105351B524FB500FFD239 /* Images.xcassets */,
 				893105371B524FB500FFD239 /* LaunchScreen.xib */,
 				8931052C1B524FB500FFD239 /* Supporting Files */,
-				8965853E1B60CA7700604E90 /* TableView.swift */,
-				894DF3C61B61C2A500EE12AD /* GiftRespository.swift */,
 			);
 			path = KK;
 			sourceTree = "<group>";
@@ -698,9 +686,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				891E8C181B5A892600691DEF /* CircleView.swift in Sources */,
-				894DF3C71B61C2A500EE12AD /* GiftRespository.swift in Sources */,
-				8965853F1B60CA7700604E90 /* TableView.swift in Sources */,
-				8965853B1B60BE6500604E90 /* GiftNagivationController.swift in Sources */,
 				891E8C111B58D77D00691DEF /* GameViewController.swift in Sources */,
 				893105311B524FB500FFD239 /* RootViewController.swift in Sources */,
 				8931052F1B524FB500FFD239 /* AppDelegate.swift in Sources */,
@@ -708,8 +693,7 @@
 				891E8C131B58D7B400691DEF /* MyViewController.swift in Sources */,
 				891E8C191B5A892600691DEF /* FirstVC.swift in Sources */,
 				89B020CE1B5649FC001CF014 /* GiftViewController.swift in Sources */,
-				8954FC771B607D100027CDEB /* Constants.swift in Sources */,
-				8965853D1B60C26300604E90 /* Gift.swift in Sources */,
+				EF190EB11B67067000922115 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
