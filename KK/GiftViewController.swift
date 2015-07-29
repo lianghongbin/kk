@@ -29,12 +29,12 @@ class GiftViewController : UIViewController {
         self.navigationItem.leftBarButtonItem = leftButton
         self.navigationItem.rightBarButtonItem = rightButton
         
-        
+
         //scroll view
         self.automaticallyAdjustsScrollViewInsets = false
         var imageArray: [UIImage!] = [UIImage(named: "first.jpg"), UIImage(named: "second.jpg"), UIImage(named: "third.jpg")]
         
-        var circleView = CircleView(frame: CGRectMake(0, 64, self.view.frame.size.width, 200), imageArray: imageArray)
+        var circleView = CircleView(frame: CGRectMake(0, 64+2, self.view.frame.size.width, 200), imageArray: imageArray)
         circleView.backgroundColor = UIColor.orangeColor()
         self.view.addSubview(circleView)
     }
