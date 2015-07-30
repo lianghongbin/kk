@@ -11,24 +11,30 @@ import ObjectMapper
 
 class NetRespository {
     
-    func request(urlString: String) -> JsonWrapper<Gift> {
+    var jsonWrapper:JsonWrapper<Gift>?
+    var a:Int?
+    
+    func requestHttp(urlString: String) {
         
-        var jsonWrapper:JsonWrapper<Gift>?
-        var httpRequest = HTTPTask()
-        httpRequest.GET(urlString, parameters: nil, completionHandler: {(response: HTTPResponse) in
-            if let err = response.error {
-                println("error: \(err.localizedDescription)")
-                return //also notify app of failure as needed
-            }
-            if let data = response.responseObject as? NSData {
-                println(data)
-                let str = NSString(data: data, encoding: NSUTF8StringEncoding)
-                println("response: \(str!)") //prints the HTML of the page
-                
-                jsonWrapper = Mapper<JsonWrapper<Gift>>().map(str!)
-            }
-        })
+        var request = HTTPTask()
+        request.GET(urlString, parameters: nil, completionHandler: handler)
         
-        return jsonWrapper!
+        println(jsonWrapper?.data?.icon)
+        println(a)
+    }
+    
+    func handler(response : HTTPResponse) {
+        if let err = response.error {
+            println("error: \(err.localizedDescription)")
+            return //also notify app of failure as needed
+        }
+        if let data = response.responseObject as? NSData {
+            let str = NSString(data: data, encoding: NSUTF8StringEncoding)
+            println("response: \(str)") //prints the HTML of the page
+            
+            jsonWrapper = Mapper<JsonWrapper<Gift>>().map(str!)
+        }
+        
+        a = 10
     }
 }

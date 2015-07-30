@@ -22,8 +22,9 @@ class GiftNagivationController: UINavigationController {
         
         var netRespository = NetRespository()
         
-        netRespository.request("http://kk.7k7k.com/1_0/card/find?id=10&token=229fed159efaf549753bc08f959acc0b")
-  
+        var jsonWrapper:JsonWrapper<Gift>?
+        netRespository.requestHttp("http://kk.7k7k.com/1_0/card/find?id=10&token=229fed159efaf549753bc08f959acc0b")
+    
         
         var giftView = GiftViewController()
         
