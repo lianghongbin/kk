@@ -8,11 +8,17 @@
 
 import UIKit
 
-class GiftViewController : UIViewController {
+class GiftViewController : UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     let numOfPages = 3
     let pageWidth = 320
     let pageHeight = 360
+    var tableView : UITableView?
+    var gifts:Gift?
+    
+    override func loadView() {
+        super.loadView()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +34,8 @@ class GiftViewController : UIViewController {
         
         self.navigationItem.leftBarButtonItem = leftButton
         self.navigationItem.rightBarButtonItem = rightButton
+        
+        initView()
         
 
         //scroll view
@@ -45,5 +53,42 @@ class GiftViewController : UIViewController {
     
     func select() {
         println("select")
+    }
+    
+    
+    func initView(){
+        // 初始化tableView的数据
+        self.tableView=UITableView(frame: CGRect(x: 0, y: 266, width: self.view.frame.size.width, height: 4*98), style: UITableViewStyle.Plain)
+        self.tableView?.separatorStyle = UITableViewCellSeparatorStyle.None
+        
+        // 设置tableView的数据源
+        self.tableView!.dataSource=self
+        // 设置tableView的委托
+        self.tableView!.delegate = self
+        //
+        self.tableView!.registerClass(GiftCell.self, forCellReuseIdentifier: "giftCell")
+        self.view.addSubview(self.tableView!)
+    }
+    
+    //总行数
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return 1
+    }
+    
+    //加载数据
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        
+        let cell = tableView .dequeueReusableCellWithIdentifier("giftCell", forIndexPath: indexPath) as! GiftCell
+        var row=indexPath.row as Int
+        cell.titleLabel?.text = "abcdkkkkk"
+        cell.iconImageView?.image = UIImage(named: "first.jpg")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        cell.descLabel?.text = "abcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcd"
+        return cell;
+        
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+  
+        return 98;
     }
 }

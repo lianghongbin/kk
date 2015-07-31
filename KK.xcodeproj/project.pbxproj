@@ -113,6 +113,7 @@
 		893106051B52720B00FFD239 /* refreshWeb.png in Resources */ = {isa = PBXBuildFile; fileRef = 893105AF1B52720B00FFD239 /* refreshWeb.png */; };
 		89B020CE1B5649FC001CF014 /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B020CD1B5649FC001CF014 /* GiftViewController.swift */; };
 		89B020D01B57480C001CF014 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B020CF1B57480C001CF014 /* RankViewController.swift */; };
+		89C96CD01B6B1C93002B744B /* GiftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C96CCF1B6B1C93002B744B /* GiftCell.swift */; };
 		D7BC7BC1F4F23912526CCCF4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70C0CFC81C472CCEDF0F85B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EF190EB11B67067000922115 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF190EB01B67067000922115 /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -238,6 +239,7 @@
 		893105AF1B52720B00FFD239 /* refreshWeb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refreshWeb.png; sourceTree = "<group>"; };
 		89B020CD1B5649FC001CF014 /* GiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
 		89B020CF1B57480C001CF014 /* RankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
+		89C96CCF1B6B1C93002B744B /* GiftCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftCell.swift; sourceTree = "<group>"; };
 		A941A9299EDED42CD7AEF0F1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E70C0CFC81C472CCEDF0F85B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE504E4AD6C1688EC15BBF0B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			children = (
 				8931054E1B52720A00FFD239 /* Resources */,
 				892269D81B69CA1600D73A2E /* Gift.swift */,
+				89C96CCF1B6B1C93002B744B /* GiftCell.swift */,
 				892269D91B69CA1600D73A2E /* GiftNagivationController.swift */,
 				892269DA1B69CA1600D73A2E /* JsonWrapper.swift */,
 				892269DB1B69CA1600D73A2E /* NetRespository.swift */,
@@ -779,6 +782,7 @@
 				892269DD1B69CA1600D73A2E /* Gift.swift in Sources */,
 				891E8C111B58D77D00691DEF /* GameViewController.swift in Sources */,
 				893105311B524FB500FFD239 /* RootViewController.swift in Sources */,
+				89C96CD01B6B1C93002B744B /* GiftCell.swift in Sources */,
 				8931052F1B524FB500FFD239 /* AppDelegate.swift in Sources */,
 				892269DE1B69CA1600D73A2E /* GiftNagivationController.swift in Sources */,
 				89B020D01B57480C001CF014 /* RankViewController.swift in Sources */,
