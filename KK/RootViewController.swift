@@ -60,7 +60,7 @@ class RootViewController: UITabBarController {
     {
         var tabFrame = self.tabBar.frame
         // - 40 is editable , I think the default value is around 50 px, below lowers the tabbar and above increases the tab bar size
-        self.tabBar.barTintColor = UIColor(red: 0.118, green: 0.125, blue: 0.133, alpha: 1.00)
+        self.tabBar.barTintColor = barTintColor
         self.tabBar.translucent = false
     }
     

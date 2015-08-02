@@ -10,5 +10,8 @@ import UIKit
 
 let insets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
 let barTintColor = UIColor(red: 0.118, green: 0.125, blue: 0.133, alpha: 1.00)
+let viewBackgroundColor = UIColor(red: 0.169, green: 0.180, blue: 0.192, alpha: 1)
 let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+
+
 

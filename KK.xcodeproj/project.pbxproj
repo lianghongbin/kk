@@ -116,6 +116,10 @@
 		89C96CD01B6B1C93002B744B /* GiftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C96CCF1B6B1C93002B744B /* GiftCell.swift */; };
 		D7BC7BC1F4F23912526CCCF4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70C0CFC81C472CCEDF0F85B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EF190EB11B67067000922115 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF190EB01B67067000922115 /* Constants.swift */; };
+		EFA858FD1B6BC3DB004115F2 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA858FC1B6BC3DB004115F2 /* Type.swift */; };
+		EFA858FF1B6E4742004115F2 /* JsonArrayWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA858FE1B6E4742004115F2 /* JsonArrayWrapper.swift */; };
+		EFA859011B6E635F004115F2 /* Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA859001B6E635F004115F2 /* Handler.swift */; };
+		EFA859051B6E7424004115F2 /* GiftCellHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA859041B6E7424004115F2 /* GiftCellHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -244,6 +248,10 @@
 		E70C0CFC81C472CCEDF0F85B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE504E4AD6C1688EC15BBF0B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EF190EB01B67067000922115 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EFA858FC1B6BC3DB004115F2 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		EFA858FE1B6E4742004115F2 /* JsonArrayWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonArrayWrapper.swift; sourceTree = "<group>"; };
+		EFA859001B6E635F004115F2 /* Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Handler.swift; sourceTree = "<group>"; };
+		EFA859041B6E7424004115F2 /* GiftCellHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftCellHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +301,7 @@
 				89C96CCF1B6B1C93002B744B /* GiftCell.swift */,
 				892269D91B69CA1600D73A2E /* GiftNagivationController.swift */,
 				892269DA1B69CA1600D73A2E /* JsonWrapper.swift */,
+				EFA858FE1B6E4742004115F2 /* JsonArrayWrapper.swift */,
 				892269DB1B69CA1600D73A2E /* NetRespository.swift */,
 				892269DC1B69CA1600D73A2E /* Status.swift */,
 				8931052E1B524FB500FFD239 /* AppDelegate.swift */,
@@ -308,6 +317,9 @@
 				893105351B524FB500FFD239 /* Images.xcassets */,
 				893105371B524FB500FFD239 /* LaunchScreen.xib */,
 				8931052C1B524FB500FFD239 /* Supporting Files */,
+				EFA858FC1B6BC3DB004115F2 /* Type.swift */,
+				EFA859001B6E635F004115F2 /* Handler.swift */,
+				EFA859041B6E7424004115F2 /* GiftCellHandler.swift */,
 			);
 			path = KK;
 			sourceTree = "<group>";
@@ -782,15 +794,19 @@
 				892269DD1B69CA1600D73A2E /* Gift.swift in Sources */,
 				891E8C111B58D77D00691DEF /* GameViewController.swift in Sources */,
 				893105311B524FB500FFD239 /* RootViewController.swift in Sources */,
+				EFA859051B6E7424004115F2 /* GiftCellHandler.swift in Sources */,
 				89C96CD01B6B1C93002B744B /* GiftCell.swift in Sources */,
 				8931052F1B524FB500FFD239 /* AppDelegate.swift in Sources */,
+				EFA859011B6E635F004115F2 /* Handler.swift in Sources */,
 				892269DE1B69CA1600D73A2E /* GiftNagivationController.swift in Sources */,
+				EFA858FD1B6BC3DB004115F2 /* Type.swift in Sources */,
 				89B020D01B57480C001CF014 /* RankViewController.swift in Sources */,
 				892269DF1B69CA1600D73A2E /* JsonWrapper.swift in Sources */,
 				891E8C131B58D7B400691DEF /* MyViewController.swift in Sources */,
 				892269E11B69CA1600D73A2E /* Status.swift in Sources */,
 				892269E01B69CA1600D73A2E /* NetRespository.swift in Sources */,
 				891E8C191B5A892600691DEF /* FirstVC.swift in Sources */,
+				EFA858FF1B6E4742004115F2 /* JsonArrayWrapper.swift in Sources */,
 				89B020CE1B5649FC001CF014 /* GiftViewController.swift in Sources */,
 				EF190EB11B67067000922115 /* Constants.swift in Sources */,
 			);

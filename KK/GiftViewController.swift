@@ -23,7 +23,7 @@ class GiftViewController : UIViewController,UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(red: 0.118, green: 0.125, blue: 0.133, alpha: 1.00)
+        self.view.backgroundColor = viewBackgroundColor
         
         
         self.navigationItem.title = "礼包大全"
@@ -60,7 +60,20 @@ class GiftViewController : UIViewController,UITableViewDelegate, UITableViewData
         // 初始化tableView的数据
         self.tableView=UITableView(frame: CGRect(x: 0, y: 266, width: self.view.frame.size.width, height: 4*98), style: UITableViewStyle.Plain)
         self.tableView?.separatorStyle = UITableViewCellSeparatorStyle.None
+        self.tableView?.backgroundColor = viewBackgroundColor
+        let tableViewFooterWidth = self.tableView?.frame.size.width
+        var tableViewFooter = UIView(frame: CGRect(x: 0, y: 0, width: tableViewFooterWidth!, height: 15))
+        tableViewFooter.backgroundColor = viewBackgroundColor
         
+        self.tableView?.tableFooterView  = tableViewFooter
+        
+        var footLabel = UILabel(frame:CGRect(x:0, y:0, width:tableViewFooterWidth!, height:15))
+        footLabel.text = "><没有数据了"
+        footLabel.font = UIFont(name: "AppleGothic", size: 12)
+        footLabel.textColor = UIColor.whiteColor()
+        footLabel.textAlignment = NSTextAlignment.Center
+        tableViewFooter.addSubview(footLabel)
+            
         // 设置tableView的数据源
         self.tableView!.dataSource=self
         // 设置tableView的委托
@@ -72,7 +85,7 @@ class GiftViewController : UIViewController,UITableViewDelegate, UITableViewData
     
     //总行数
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 1
+        return 2
     }
     
     //加载数据
@@ -80,9 +93,17 @@ class GiftViewController : UIViewController,UITableViewDelegate, UITableViewData
         
         let cell = tableView .dequeueReusableCellWithIdentifier("giftCell", forIndexPath: indexPath) as! GiftCell
         var row=indexPath.row as Int
-        cell.titleLabel?.text = "abcdkkkkk"
+        cell.titleLabel?.text = "我的大标题，哈哈\(row)"
         cell.iconImageView?.image = UIImage(named: "first.jpg")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        cell.descLabel?.text = "abcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcd"
+        cell.descLabel?.text = "我就是想测一下而已我就是想测一下而已我就是想测一下而已我就是想测一下而已我就是想测一下而已我就是想测一下而已"
+        cell.typeLabel?.text = "积"
+        cell.typeLabel?.backgroundColor = UIColor.orangeColor()
+        cell.typeLabel?.textColor = UIColor.whiteColor()
+        
+        cell.countLabel?.text = "剩余:35%"
+        
+        cell.progress?.setProgress(0.35, animated: true)
+        
         return cell;
         
     }
@@ -91,4 +112,5 @@ class GiftViewController : UIViewController,UITableViewDelegate, UITableViewData
   
         return 98;
     }
+
 }
