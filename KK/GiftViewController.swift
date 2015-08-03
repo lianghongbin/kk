@@ -9,6 +9,7 @@
 import UIKit
 import ObjectMapper
 import Kingfisher
+import ICSPullToRefresh
 
 class GiftViewController : UIViewController,UITableViewDelegate, UITableViewDataSource, CellDelegate {
     
@@ -83,7 +84,8 @@ class GiftViewController : UIViewController,UITableViewDelegate, UITableViewData
         footLabel.textColor = UIColor.whiteColor()
         footLabel.textAlignment = NSTextAlignment.Center
         tableViewFooter.addSubview(footLabel)
-            
+        
+    
         // 设置tableView的数据源
         self.tableView!.dataSource=self
         // 设置tableView的委托
@@ -91,6 +93,22 @@ class GiftViewController : UIViewController,UITableViewDelegate, UITableViewData
         //
         self.tableView!.registerClass(GiftCell.self, forCellReuseIdentifier: "giftCell")
         self.view.addSubview(self.tableView!)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.tableView?.addInfiniteScrollingWithHandler {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
+                sleep(3)
+                dispatch_async(dispatch_get_main_queue(), { [unowned self] in
+                    
+                    self.tableView?.reloadData()
+                    self.tableView?.infiniteScrollingView?.stopAnimating()
+                    })
+            })
+        }
+        
     }
     
     //总行数
@@ -164,6 +182,6 @@ class GiftViewController : UIViewController,UITableViewDelegate, UITableViewData
     }
     
     func pullLoad() {
-        self.tableView?
+    
     }
 }

@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KK/GiftViewController.swift"
-            timestampString = "460102272.43554"
+            timestampString = "460312364.442753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "initView()"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "initScrollView()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
