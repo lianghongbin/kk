@@ -18,7 +18,8 @@ class GiftViewController : UIViewController,UITableViewDelegate, UITableViewData
     var tableView : UITableView?
     var typeLabel = TypeLabel()
     var gifts:Array<Gift> = []
-    let myCache = ImageCache(name: "my_cache")
+    let myCache = ImageCache(name: "lhb_kk_cache")
+    var refreshControl:UIRefreshControl!
     var repository:NetRepository<JsonArrayWrapper<Gift>>?
     var url:String = "http://kk.7k7k.com/1_0/card/recommend?pagesize=10&pagenum=1&platform=ALL&searchType=0&token=45f3b67195bbd1087caa77b11478e0d1"
     
@@ -34,7 +35,9 @@ class GiftViewController : UIViewController,UITableViewDelegate, UITableViewData
         initTable()
         repository = NetRepository<JsonArrayWrapper<Gift>>()
         repository?.delegate = self
-        repository?.requestHttp(url)
+        
+        loadData()
+        initRefresh()
     }
     
     func search() {
@@ -137,11 +140,30 @@ class GiftViewController : UIViewController,UITableViewDelegate, UITableViewData
     }
 
     func reloadTable(data: Mappable) {
+        println("request complete")
         if let jsonArrayWrapper = data as? JsonArrayWrapper<Gift> {
             self.gifts = jsonArrayWrapper.data!
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView?.reloadData()
             })
         }
+    }
+    
+    func loadData() {
+        println("load data")
+        repository?.requestHttp(url)
+        refreshControl?.endRefreshing()
+    }
+    
+    func initRefresh() {
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "下拉刷新")
+        self.refreshControl.tintColor = UIColor.whiteColor()
+        self.refreshControl.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView!.addSubview(refreshControl)
+    }
+    
+    func pullLoad() {
+        self.tableView?
     }
 }
