@@ -8,6 +8,7 @@
 
 import UIKit
 import ObjectMapper
+import Kingfisher
 
 class GiftViewController : UIViewController,UITableViewDelegate, UITableViewDataSource, CellDelegate {
     
@@ -17,6 +18,7 @@ class GiftViewController : UIViewController,UITableViewDelegate, UITableViewData
     var tableView : UITableView?
     var typeLabel = TypeLabel()
     var gifts:Array<Gift> = []
+    let myCache = ImageCache(name: "my_cache")
     var repository:NetRepository<JsonArrayWrapper<Gift>>?
     var url:String = "http://kk.7k7k.com/1_0/card/recommend?pagesize=10&pagenum=1&platform=ALL&searchType=0&token=45f3b67195bbd1087caa77b11478e0d1"
     
@@ -101,11 +103,9 @@ class GiftViewController : UIViewController,UITableViewDelegate, UITableViewData
         
         cell.titleLabel?.text = gift.name
         
-        if let url = NSURL(string: gift.icon!) {
-            if let data = NSData(contentsOfURL: url){
-                cell.iconImageView?.image = UIImage(data: data)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-            }
-        }
+        cell.iconImageView?.kf_setImageWithURL(NSURL(string: gift.icon!)!,
+            placeholderImage: nil,
+            optionsInfo: [.TargetCache: myCache])
         
         cell.descLabel?.text = gift.description
         
@@ -139,8 +139,9 @@ class GiftViewController : UIViewController,UITableViewDelegate, UITableViewData
     func reloadTable(data: Mappable) {
         if let jsonArrayWrapper = data as? JsonArrayWrapper<Gift> {
             self.gifts = jsonArrayWrapper.data!
-            
-            self.tableView?.reloadData()
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tableView?.reloadData()
+            })
         }
     }
 }

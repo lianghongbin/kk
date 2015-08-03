@@ -11,3 +11,12 @@ platform :ios, '8.0'
 use_frameworks!
 
 pod 'SnapKit', '~> 0.12.0'
+
+platform :ios, '6.1'
+pod 'SDWebImage', '~>3.7'
+
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+pod 'Kingfisher', '~> 1.4'

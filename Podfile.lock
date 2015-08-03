@@ -1,15 +1,23 @@
 PODS:
+  - Kingfisher (1.4.2)
   - ObjectMapper (0.14)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
   - SnapKit (0.12.0)
   - SwiftHTTP (0.9.5)
 
 DEPENDENCIES:
+  - Kingfisher (~> 1.4)
   - ObjectMapper (~> 0.14)
+  - SDWebImage (~> 3.7)
   - SnapKit (~> 0.12.0)
   - SwiftHTTP (~> 0.9.4)
 
 SPEC CHECKSUMS:
+  Kingfisher: 4446782a827abbe2e6048a1fa741924a10e6ad7c
   ObjectMapper: 45b97fa0a68c3851daad3efca87bc6c1ab1718c0
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SnapKit: 00c388aa3bf1944c1b55472f31e841f75bd83882
   SwiftHTTP: cd7b248bc07db02926ff54cf19b580b78f7abfa1
 

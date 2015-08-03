@@ -100,7 +100,6 @@ class GiftCell: UITableViewCell {
             make.top.equalTo(weakBgView!).offset(30)
             make.left.equalTo(weakIconView!.snp_right).offset(8)
             make.right.equalTo(weakBgView!).offset(-8)
-            make.bottom.equalTo(weakBgView!).offset(-15)
             make.height.equalTo(40)
         })
         

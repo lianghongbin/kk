@@ -170,7 +170,6 @@ class CircleView: UIView, UIScrollViewDelegate {
     
     //事件触发方法
     func timerAction() {
-        print("timer")
         contentScrollView.setContentOffset(CGPointMake(self.frame.size.width*2, 0), animated: true)
     }
     
@@ -219,7 +218,6 @@ class CircleView: UIView, UIScrollViewDelegate {
     
     //时间触发器 设置滑动时动画true，会触发的方法
     func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
-        print("animator")
         self.scrollViewDidEndDecelerating(contentScrollView)
     }
     

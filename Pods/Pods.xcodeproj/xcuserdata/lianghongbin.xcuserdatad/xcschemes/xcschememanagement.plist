@@ -4,12 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,7 +37,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>31E9EAD34AF52AAD8DB38229B582F9D2</key>
+		<key>07C6B05FE62632B3B61705C8329687B8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +47,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5148CDD8E26B53A4726845EC8B8FA99F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9666688CB41B38A9914616144C9C7A3E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>AB33B84630B10DE253DA6B29E233F61D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FDE90F7910B8046D4AE842BE664A5926</key>
+		<key>EECF021EE6FF4AF362F560470DEC232B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

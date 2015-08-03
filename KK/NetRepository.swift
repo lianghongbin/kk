@@ -23,8 +23,6 @@ class NetRepository<T:Mappable> {
             }
             if let data = response.responseObject as? NSData {
                 let str = NSString(data: data, encoding: NSUTF8StringEncoding)
-                println("response: \(str!)") //prints the HTML of the page
-                
                 let jsonWrapper = Mapper<T>().map(str!)
                 self.delegate!.reloadTable(jsonWrapper!)
             }
