@@ -9,13 +9,9 @@
 import SwiftHTTP
 import ObjectMapper
 
-class NetRespository<T:Mappable, H:Handler> {
+class NetRepository<T:Mappable> {
     
-    init() {
-        
-    }
-    
-    var handler:H
+    var delegate:CellDelegate?
     
     func requestHttp(urlString: String) {
 
@@ -29,9 +25,8 @@ class NetRespository<T:Mappable, H:Handler> {
                 let str = NSString(data: data, encoding: NSUTF8StringEncoding)
                 println("response: \(str!)") //prints the HTML of the page
                 
-                let jsonWrapper = Mapper<T>().map(str!) as! JsonArrayWrapper<Gift>
-                
-                println(jsonWrapper.data?.count)
+                let jsonWrapper = Mapper<T>().map(str!)
+                self.delegate!.reloadTable(jsonWrapper!)
             }
             
         })

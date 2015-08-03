@@ -10,10 +10,6 @@ import UIKit
 
 class GiftNagivationController: UINavigationController {
     
-    var url:String = "http://kk.7k7k.com/1_0/card/recommend?pagesize=10&pagenum=1&platform=ALL&searchType=0&token=45f3b67195bbd1087caa77b11478e0d1"
-    
-    var oneCardUrl:String = "http://kk.7k7k.com/1_0/card/find?id=10&token=229fed159efaf549753bc08f959acc0b"
-    
     override func viewDidLoad() {
         
         self.tabBarItem.title = nil
@@ -22,12 +18,6 @@ class GiftNagivationController: UINavigationController {
         self.tabBarItem.imageInsets = insets
         self.navigationBar.barTintColor = viewBackgroundColor
         self.navigationBar.titleTextAttributes = titleDict as [NSObject : AnyObject]
-        
-        
-        var netRespository = NetRespository<JsonArrayWrapper<Gift>>()
-        
-        netRespository.requestHttp(url)
-    
         
         var giftView = GiftViewController()
         
