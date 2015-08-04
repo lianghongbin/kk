@@ -100,15 +100,13 @@ class GiftViewController : UIViewController,UITableViewDelegate, UITableViewData
 
         self.tableView?.addInfiniteScrollingWithHandler {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
-                sleep(3)
                 dispatch_async(dispatch_get_main_queue(), { [unowned self] in
                     
-                    self.tableView?.reloadData()
+                    self.loadData()
                     self.tableView?.infiniteScrollingView?.stopAnimating()
                     })
             })
         }
-        
     }
     
     //总行数
@@ -152,8 +150,26 @@ class GiftViewController : UIViewController,UITableViewDelegate, UITableViewData
         
     }
     
+    // UITableViewDelegate 方法，处理列表项的选中事件
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        self.tableView!.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        var gift = gifts[indexPath.row]
+        
+        var alertview = UIAlertView();
+        alertview.title = "提示!"
+        alertview.message = "你选中了【\(gift.name)】";
+        alertview.addButtonWithTitle("确定")
+        alertview.show();
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    //返回Cell的高度
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-  
         return 98;
     }
 
@@ -161,15 +177,23 @@ class GiftViewController : UIViewController,UITableViewDelegate, UITableViewData
         println("request complete")
         if let jsonArrayWrapper = data as? JsonArrayWrapper<Gift> {
             self.gifts = jsonArrayWrapper.data!
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.tableView?.reloadData()
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
+                dispatch_async(dispatch_get_main_queue(), { [unowned self] in
+                    
+                    self.tableView?.reloadData()
+                    })
             })
+
         }
     }
     
     func loadData() {
         println("load data")
         repository?.requestHttp(url)
+    }
+    
+    func pullRefresh() {
+        loadData()
         refreshControl?.endRefreshing()
     }
     
@@ -177,7 +201,7 @@ class GiftViewController : UIViewController,UITableViewDelegate, UITableViewData
         self.refreshControl = UIRefreshControl()
         self.refreshControl.attributedTitle = NSAttributedString(string: "下拉刷新")
         self.refreshControl.tintColor = UIColor.whiteColor()
-        self.refreshControl.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl.addTarget(self, action: "pullRefresh", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView!.addSubview(refreshControl)
     }
     
