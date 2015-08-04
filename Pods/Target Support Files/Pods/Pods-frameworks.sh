@@ -52,6 +52,8 @@ code_sign_if_enabled() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework 'Pods/Haneke.framework'
+  install_framework 'Pods/ICSPullToRefresh.framework'
   install_framework 'Pods/Kingfisher.framework'
   install_framework 'Pods/ObjectMapper.framework'
   install_framework 'Pods/SDWebImage.framework'
@@ -59,6 +61,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/SwiftHTTP.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework 'Pods/Haneke.framework'
+  install_framework 'Pods/ICSPullToRefresh.framework'
   install_framework 'Pods/Kingfisher.framework'
   install_framework 'Pods/ObjectMapper.framework'
   install_framework 'Pods/SDWebImage.framework'
